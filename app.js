@@ -3,11 +3,11 @@ const express = require('express')
 const app = express()
 const port = 3000
 const exphbs = require('express-handlebars')
-
+const methodOverride = require('method-override')
 
 // set hbs 預設佈局main
-app.engine = ('hbs', exphbs({ defaultLayout: 'main' })) 
-app.set('view engine', 'hbs')
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
+app.set('view engine', 'handlebars')
 
 
 // setting static files
@@ -17,8 +17,13 @@ app.use(express.static('public'))
 // body-parser
 app.use(express.urlencoded({ extended: true }))
 
+
+// methodOverride
+app.use(methodOverride('_method'))
+
+
 app.get('/', (req, res) => {
-  res.send('This is my first Express web APP with nodemon!')
+  res.render('index')
 })
 
 app.listen(port, () => {
