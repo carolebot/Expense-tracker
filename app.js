@@ -7,6 +7,16 @@ const routes = require('./routes')
 const methodOverride = require('method-override')
 require('./config/mongoose')
 
+
+//icon 圖源
+const CATEGORY = {
+  house: "https://fontawesome.com/icons/home?style=solid",
+  traffic: "https://fontawesome.com/icons/shuttle-van?style=solid",
+  entertainment: "https://fontawesome.com/icons/grin-beam?style=solid",
+  food: "https://fontawesome.com/icons/utensils?style=solid",
+  others: "https://fontawesome.com/icons/pen?style=solid"
+}
+
 // set hbs static files 預設佈局main
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')

@@ -1,1 +1,103 @@
-<h1>hi i am index</h1>
+{{!-- expenses:expenses --}}
+{{#if expenses}}
+<!-- expense list -->
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-10 col-6 mx-auto">
+      <div class="row d-flex justify-content-center p-3">
+        <div class="dropdown">
+          <button class="btn btn-outline-dark dropdown-toggle font-italic" type="button" id="dropdownMenuButton"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort</button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="/?sortBy=name&sortOrder=asc">Food
+            </a>
+            <a class="dropdown-item" href="/?sortBy=name&sortOrder=desc">Traffic</a>
+            <a class="dropdown-item" href="/?sortBy=category&sortOrder=asc">Entertainment</a>
+            <a class="dropdown-item" href="/?sortBy=rating&sortOrder=desc">House</a>
+            <a class="dropdown-item" href="/?sortBy=rating&sortOrder=desc">Others</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div>
+        <p>總金額:</p>
+        <p class="text-right" style="font-size: 60px; color:orange;">{{totalAmount}} 元</p>
+      </div>
+
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Category</th>
+            <th scope="col">Name</th>
+            <th scope="col">Amount</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each expenses }}
+          <tr>
+            <th style="vertical-align: middle;" scope="row">{{this.category}}</th>
+            <td display="d-flex">
+              <p>{{this.name}}</p>
+              <p>{{this.date}}</p>
+            </td>
+
+            <td style="vertical-align: middle;">{{this.amount}}</td>
+            <td style="vertical-align: middle;"><a href="./expenses/{{this._id}}/edit">Edit</a></td>
+            <td style="vertical-align: middle;"><button type="button" class="btn btn-danger btn-sm" data-toggle="modal"
+                data-target="#delete-{{this._id}}">delete</button></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <div class="text-center my-4">
+        <a href="./expenses/new">
+          <button type="button" class="btn btn-warning  mb-3">Add Expense</button>
+        </a>
+      </div>
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="delete-{{this._id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Delete comfirm</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Are you sure you want to delete【{{this.name}}】?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <form action="/expenses/{{this._id}}/?_method=DELETE" method="POST" style="display: inline;">
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}}
+
+
+
+{{#unless expenses}}
+{{!-- no resutls --}}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-10 col-12 mx-auto text-center">
+      Sorry, there are no results about this keyword.( <br> Back to <a href="/">HomePage</a> Try some other
+      keywords.
+    </div>
+  </div>
+</div>
+{{/unless}}

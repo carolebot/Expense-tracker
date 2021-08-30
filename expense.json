@@ -2,38 +2,38 @@
   "results": [
     {
       "id": "1",
-      "name": "lunch",
+      "name": "Lunch",
       "date": "2019-04-23",
       "amount": "60",
-      "category": "food"
+      "category": "Food"
     },
       {
         "id": "2",
-        "name": "dinner",
+        "name": "Dinner",
         "date": "2019-04-23",
         "amount": "60",
-        "category": "food"
+        "category": "Food"
       },
       {
         "id": "3",
         "name": "MRT",
         "date": "2019-04-23",
         "amount": "120",
-        "category": "traffic"
+        "category": "Traffic"
       },
       {
         "id": "4",
         "name": "watch movie",
         "date": "2019-04-23",
         "amount": "220",
-        "category": "entertainment"
+        "category": "Entertainment"
       },
     {
       "id": "5",
-      "name": "house rent",
+      "name": "Rent",
       "date": "2021-04-01",
       "amount": "25000",
-      "category": "house"
+      "category": "House"
     }
    ]
 }
