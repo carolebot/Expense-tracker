@@ -9,20 +9,20 @@
           <button class="btn btn-outline-dark dropdown-toggle font-italic" type="button" id="dropdownMenuButton"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort</button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="/?sortBy=name&sortOrder=asc">Food
+            <a class="dropdown-item" href="/?sort=food">Food
             </a>
-            <a class="dropdown-item" href="/?sortBy=name&sortOrder=desc">Traffic</a>
-            <a class="dropdown-item" href="/?sortBy=category&sortOrder=asc">Entertainment</a>
-            <a class="dropdown-item" href="/?sortBy=rating&sortOrder=desc">House</a>
-            <a class="dropdown-item" href="/?sortBy=rating&sortOrder=desc">Others</a>
+            <a class="dropdown-item" href="/?sort=traffic">Traffic</a>
+            <a class="dropdown-item" href="/?sort=entertainment">Entertainment</a>
+            <a class="dropdown-item" href="/?sort=house">House</a>
+            <a class="dropdown-item" href="/?sort=others">Others</a>
           </div>
         </div>
 
       </div>
 
       <div>
-        <p>總金額:</p>
-        <p class="text-right" style="font-size: 60px; color:orange;">{{totalAmount}} 元</p>
+        <p style="font-size: 30px;">總金額:</p>
+        <p class="text-right" style="font-size: 80px; color:orange;">{{totalAmount}} 元</p>
       </div>
 
 
@@ -96,8 +96,7 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-10 col-12 mx-auto text-center">
-      Sorry, there are no results about this keyword.( <br> Back to <a href="/">HomePage</a> Try some other
-      keywords.
+      Sorry, there are no expense about <strong>{{sort}}</strong> :( <br> Back to <a href="/">HomePage</a> Check some other categories.
     </div>
   </div>
 </div>

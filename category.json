@@ -1,0 +1,27 @@
+{
+  "results": [
+    {
+      "name": "house",
+      "icon": "https://fontawesome.com/icons/home?style=solid"
+    },
+    {
+      "name": "traffic",
+      "icon": "https://fontawesome.com/icons/shuttle-van?style=solid"
+    },
+    {
+      "name": "entertainment",
+      "icon": "https://fontawesome.com/icons/grin-beam?style=solid"
+    },
+    {
+      "name": "food",
+      "icon": "https://fontawesome.com/icons/grin-beam?style=solid"
+    },
+    {
+      "name": "others",
+      "icon": "https://fontawesome.com/icons/pen?style=solid"
+    }
+  ]
+}
+
+
+
