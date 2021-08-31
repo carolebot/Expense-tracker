@@ -6,7 +6,6 @@ console.log(expenseList.results)
 db.once('open', () => {
   expenseList.results.forEach(data => {
     Expense.create({
-      id: data.id,
       name: data.name,
       date: data.date,
       amount: data.amount,

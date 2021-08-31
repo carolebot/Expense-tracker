@@ -6,7 +6,7 @@ const exphbs = require('express-handlebars')
 const routes = require('./routes')
 const methodOverride = require('method-override')
 require('./config/mongoose')
-
+const flash = require('connect-flash')
 
 //icon 圖源
 const CATEGORY = {
@@ -22,7 +22,7 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
-
+app.use(flash())
 
 // methodOverride
 app.use(methodOverride('_method'))
