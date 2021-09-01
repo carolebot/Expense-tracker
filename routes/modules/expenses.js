@@ -1,8 +1,6 @@
 const express = require('express')
 const router = express.Router()
 const Expense = require('../../models/expense')
-const Allcategory = require('../../category.json').results
-
 
 
 router.get('/new', (req, res) => {

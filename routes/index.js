@@ -7,5 +7,4 @@ const expenses = require('./modules/expenses')
 router.use('/', home)
 router.use('/expenses', expenses) //把路徑的/expenses
 
-
 module.exports = router
