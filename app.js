@@ -1,7 +1,7 @@
 // set express & tools
 const express = require('express')
 const app = express()
-const port = 3000
+const PORT = process.env.PORT || 3000
 const exphbs = require('express-handlebars')
 const routes = require('./routes')
 const methodOverride = require('method-override')
@@ -25,6 +25,6 @@ app.use(routes)
 
 
 // server start and listen
-app.listen(port, () => {
-  console.log(`running on http://localhost:${port}`)
+app.listen(PORT, () => {
+  console.log(`running on http://localhost:${PORT}`)
 })
