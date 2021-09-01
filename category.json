@@ -1,24 +1,24 @@
 {
   "results": [
     {
-      "name": "house",
-      "icon": "https://fontawesome.com/icons/home?style=solid"
+      "name": "House",
+      "icon": "fas fa-home"
     },
     {
-      "name": "traffic",
-      "icon": "https://fontawesome.com/icons/shuttle-van?style=solid"
+      "name": "Traffic",
+      "icon": "fas fa-shuttle-van"
     },
     {
-      "name": "entertainment",
-      "icon": "https://fontawesome.com/icons/grin-beam?style=solid"
+      "name": "Entertainment",
+      "icon": "fas fa-grin-beam"
     },
     {
-      "name": "food",
-      "icon": "https://fontawesome.com/icons/grin-beam?style=solid"
+      "name": "Food",
+      "icon": "fas fa-grin-beam"
     },
     {
-      "name": "others",
-      "icon": "https://fontawesome.com/icons/pen?style=solid"
+      "name": "Others",
+      "icon": "fas fa-pen"
     }
   ]
 }

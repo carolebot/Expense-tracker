@@ -9,13 +9,16 @@
           <button class="btn btn-outline-dark dropdown-toggle font-italic" type="button" id="dropdownMenuButton"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort</button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="/?sort=food">Food
+            <a class="dropdown-item" href="/">All
             </a>
-            <a class="dropdown-item" href="/?sort=traffic">Traffic</a>
-            <a class="dropdown-item" href="/?sort=entertainment">Entertainment</a>
-            <a class="dropdown-item" href="/?sort=house">House</a>
-            <a class="dropdown-item" href="/?sort=others">Others</a>
+            <a class="dropdown-item" href="/?sort=Food">Food
+            </a>
+            <a class="dropdown-item" href="/?sort=Traffic">Traffic</a>
+            <a class="dropdown-item" href="/?sort=Entertainment">Entertainment</a>
+            <a class="dropdown-item" href="/?sort=House">House</a>
+            <a class="dropdown-item" href="/?sort=Others">Others</a>
           </div>
+          <p class="index-sort" style="display: inline;"> {{#if sort}} by <strong>{{sort}}</strong>{{/if}} {{#unless sort}}by All{{/unless}}</p>
         </div>
 
       </div>
@@ -23,6 +26,7 @@
       <div>
         <p style="font-size: 30px;">總金額:</p>
         <p class="text-right" style="font-size: 80px; color:orange;">{{totalAmount}} 元</p>
+      
       </div>
 
 
@@ -30,7 +34,7 @@
         <thead>
           <tr>
             <th scope="col">Category</th>
-            <th scope="col">Name</th>
+            <th scope="col">Description</th>
             <th scope="col">Amount</th>
             <th scope="col"></th>
             <th scope="col"></th>
@@ -39,7 +43,7 @@
         <tbody>
           {{#each expenses }}
           <tr>
-            <th style="vertical-align: middle;" scope="row">{{this.category}}</th>
+            <th style="vertical-align: middle; " scope="row" <span><i class="{{this.category}}"></i></span></th>
             <td display="d-flex">
               <p>{{this.name}}</p>
               <p>{{this.date}}</p>

@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Expense = require('../../models/expense')
+const Allcategory = require('../../category.json').results
 
 
 
@@ -24,7 +25,6 @@ router.get('/:id/edit', (req, res) => {
   Expense.findById(id)
     .lean()
     .then((expense) => {
-      console.log(expense.date)
       res.render('edit', { expense })
     })
     .catch(error => console.log(error))

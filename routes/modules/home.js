@@ -3,6 +3,15 @@ const router = express.Router()
 const Expense = require('../../models/expense')
 const moment = require('moment')
 
+const CategoryIcon = {
+  Home: 'fas fa-house-user',
+  Traffic: 'fas fa-shuttle-van',
+  Entertainment: 'fas fa-grin-beam',
+  Food: 'fas fa-utensils',
+  Other: 'fas fa-pen',
+}
+
+
 // browse all restaurants
 router.get('/', (req, res) => {
   let totalAmount = 0
@@ -13,12 +22,13 @@ router.get('/', (req, res) => {
     category: {
       $regex: sortRegExp
     }
-  })
+  })  
     .lean()
     .then(expenses => {
       expenses.forEach(expense => {
-        expense.date = moment(expense.date).format('YYYY/MM/DD')
+       expense.date = moment(expense.date).format('YYYY/MM/DD')
         totalAmount += expense.amount
+        expense.category = CategoryIcon[expense.category] || "fas fa-pen"
       })
       res.render('index', { expenses, totalAmount, sort })
     })
