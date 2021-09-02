@@ -21,12 +21,13 @@
           <p class="sort"> {{#if sort}} by {{sort}}{{/if}} {{#unless sort}}by All{{/unless}}</p>
         </div>
       </div>
+      {{#if expenses}}
       <div>
         <p class="total">Total:</p>
         <p class="text-right money">$ {{totalAmount}}</p>     
       </div>
 
-{{#if expenses}}
+
       <table class="table table-striped">
         <thead>
           <tr>
