@@ -1,5 +1,5 @@
 {{!-- expenses:expenses --}}
-{{#if expenses}}
+
 <!-- expense list -->
 <div class="container mt-5">
   <div class="row">
@@ -20,16 +20,13 @@
           </div>
           <p class="index-sort" style="display: inline;"> {{#if sort}} by <strong>{{sort}}</strong>{{/if}} {{#unless sort}}by All{{/unless}}</p>
         </div>
-
       </div>
-
       <div>
         <p style="font-size: 30px;">Total:</p>
-        <p class="text-right" style="font-size: 80px; color:orange;">$ {{totalAmount}}</p>
-      
+        <p class="text-right" style="font-size: 80px; color:orange;">$ {{totalAmount}}</p>     
       </div>
 
-
+{{#if expenses}}
       <table class="table table-striped">
         <thead>
           <tr>
@@ -98,9 +95,14 @@
 {{#unless expenses}}
 {{!-- no resutls --}}
 <div class="container mt-5">
-  <div class="row">
+  <div class="d-flex flex-column bd-highlight">
     <div class="col-md-10 col-12 mx-auto text-center">
-      Sorry, there are no <strong>{{sort}}</strong> expenses  :( <br> Back to <a href="/">HomePage</a> Check some other categories.
+      Sorry, there are no <strong>{{sort}}</strong> expenses  :( <br> Back to <a href="/">HomePage</a>
+    </div>
+    <div class="text-center mt-3">
+      <a href="./expenses/new">
+        <button type="button" class="btn btn-warning  mb-3">Add Expense</button>
+      </a>
     </div>
   </div>
 </div>

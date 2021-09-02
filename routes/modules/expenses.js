@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const Expense = require('../../models/expense')
+const moment = require('moment')
 
 
 router.get('/new', (req, res) => {
@@ -23,6 +24,7 @@ router.get('/:id/edit', (req, res) => {
   Expense.findById(id)
     .lean()
     .then((expense) => {
+      expense.date = moment(expense.date).format('YYYY/MM/DD')
       res.render('edit', { expense })
     })
     .catch(error => console.log(error))
