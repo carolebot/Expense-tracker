@@ -1,3 +1,32 @@
-p {
-  outline: solid black;
+/* nav */
+
+.fa-money-check-alt {
+  color: lightseagreen;
+}
+
+/* index */
+p.sort {
+  display: inline;
+  font-weight: bold;
+}
+
+.title {
+  display:d-flex;
+}
+
+.td-name {
+  font-weight:bold;
+}
+
+th.category, td.td-content{
+  vertical-align: middle;
+}
+
+
+.total {
+  font-size: 30px;
+}
+.money {
+  font-size: 80px;
+  color: orange;
 }
