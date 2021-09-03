@@ -24,7 +24,7 @@ router.get('/:id/edit', (req, res) => {
   Expense.findById(id)
     .lean()
     .then((expense) => {
-      expense.date = moment(expense.date).format('YYYY/MM/DD')
+      expense.date = moment(expense.date).format('YYYY-MM-DD')
       console.log(' expense.date : %o', expense.date)
       res.render('edit', { expense })
     })
